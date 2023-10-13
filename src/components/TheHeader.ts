@@ -1,6 +1,15 @@
 import { Component } from "../core/heropy";
 
+interface State {
+  [key: string]: unknown;
+  menus: {
+    name: string;
+    href: string;
+  }[];
+}
+
 export default class TheHeader extends Component {
+  public state!: State; // 할당 단언을 통한 초기화 X 및 에러 발생 X
   constructor() {
     super({
       tagName: "header",
